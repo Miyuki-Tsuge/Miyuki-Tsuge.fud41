@@ -44,10 +44,10 @@ let i = 0;
 let typedError = false;
 
 function setQuestion () {
-  let keyOfArray = Math.floor(Math.random() * arrayOfCurrentWord.length);
-  let currentText = arrayOfCurrentWord[keyOfArray];
+  let key = Math.floor(Math.random() * arrayOfCurrentWord.length);
+  let currentText = arrayOfCurrentWord[key];
   
-  arrayOfCurrentWord.splice(keyOfArray, 1);
+  arrayOfCurrentWord.splice(key, 1);
   
   document.getElementById("typed").textContent = "";
   document.getElementById("remained").textContent = currentText;
