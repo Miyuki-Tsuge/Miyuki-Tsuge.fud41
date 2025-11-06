@@ -43,7 +43,7 @@ const arrayOfImg = [
 let i = 0;
 let typedError = false;
 
-function setQuestion () {
+function setWord() {
   let key = Math.floor(Math.random() * arrayOfCurrentWord.length);
   let currentText = arrayOfCurrentWord[key];
   
@@ -62,7 +62,7 @@ function setQuestion () {
   typedError = false;
 }
 
-setQuestion();
+setWord();
 
 function confirmText(){
   let typedStr = document.getElementById("typedText").value;
@@ -88,7 +88,7 @@ function confirmText(){
         }
 
       } else {
-        setQuestion();
+        setWord();
       }
     }
   } else {
