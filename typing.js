@@ -1,17 +1,17 @@
 'use strict'
 // 1行目に記載している 'use strict' は削除しないでください
 
-const arrayOfCurrentWord = [
-  "JavaScript",
-  "array",
-  "object",
-  "function",
-  "undefined",
-  "typeof",
-  "map",
-  "Boolean",
-  "length",
-  "splice"
+const arrayOfWord = [
+  "christmas tree",
+  "present",
+  "stocking",
+  "carol",
+  "bells",
+  "snowman",
+  "reindeer",
+  "chimney",
+  "holiday",
+  "turkey"
 ]
 
 const arrayOfSupportMessage = [
@@ -44,13 +44,13 @@ let i = 0;
 let typedError = false;
 
 function setWord() {
-  let key = Math.floor(Math.random() * arrayOfCurrentWord.length);
-  let currentText = arrayOfCurrentWord[key];
+  let key = Math.floor(Math.random() * arrayOfWord.length);
+  let word = arrayOfWord[key];
   
-  arrayOfCurrentWord.splice(key, 1);
+  arrayOfWord.splice(key, 1);
   
   document.getElementById("typed").textContent = "";
-  document.getElementById("remained").textContent = currentText;
+  document.getElementById("remained").textContent = word;
   document.getElementById("typedText").value = "";
   document.getElementById("supportMessage").textContent = arrayOfSupportMessage[i];
   document.getElementById("chrissmassTreeImg").src=arrayOfImg[i];
@@ -74,7 +74,7 @@ function confirmText(){
     document.getElementById("typed").textContent += typedLastWord;
     document.getElementById("remained").textContent = document.getElementById("remained").textContent.slice(1);
     if(document.getElementById("remained").textContent.length === 0) {
-      if(arrayOfCurrentWord.length > 0) {
+      if(arrayOfWord.length > 0) {
         setWord();
       } else {
         document.getElementById("typingArea").style.visibility = "hidden";
