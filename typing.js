@@ -73,9 +73,10 @@ function confirmText(){
 
     document.getElementById("typed").textContent += typedLastWord;
     document.getElementById("remained").textContent = document.getElementById("remained").textContent.slice(1);
-
     if(document.getElementById("remained").textContent.length === 0) {
-      if(arrayOfCurrentWord.length === 0) {
+      if(arrayOfCurrentWord.length > 0) {
+        setWord();
+      } else {
         document.getElementById("typingArea").style.visibility = "hidden";
         document.getElementById("textArea").style.visibility = "hidden";
         document.getElementById("retry").style.visibility = "";
@@ -86,9 +87,6 @@ function confirmText(){
           document.getElementById("supportMessage").textContent = "";
           document.getElementById("retryMessage").style.visibility = "";
         }
-
-      } else {
-        setWord();
       }
     }
   } else {
