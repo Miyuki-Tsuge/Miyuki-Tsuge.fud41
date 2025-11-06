@@ -14,19 +14,6 @@ const arrayOfWord = [
   "turkey"
 ]
 
-const arrayOfSupportMessage = [
-  "",
-  "",
-  "🎉",
-  "🎉",
-  "🎉🎉",
-  "🎉🎉",
-  "🎉🎉🎉",
-  "🎉🎉🎉",
-  "🎉🎉🎉🎉",
-  "🎉🎉🎉🎉",
-]
-
 const arrayOfImg = [
   "christmasTree0.png",
   "christmasTree0.png",
@@ -52,7 +39,7 @@ function setWord() {
   document.getElementById("typed").textContent = "";
   document.getElementById("remained").textContent = word;
   document.getElementById("typedText").value = "";
-  document.getElementById("supportMessage").textContent = arrayOfSupportMessage[i];
+  document.getElementById("supportMessage").textContent = "🎉".repeat(Math.floor(i / 2));
   document.getElementById("chrissmassTreeImg").src=arrayOfImg[i];
   
   if(typedError === false) {
@@ -68,9 +55,7 @@ function confirmText(){
   let typedStr = document.getElementById("typedText").value;
   let typedLastWord = typedStr.slice(typedStr.length -1);
   let compareFirstWord = document.getElementById("remained").textContent.slice(0, 1);
-
   if (compareFirstWord === typedLastWord) {
-
     document.getElementById("typed").textContent += typedLastWord;
     document.getElementById("remained").textContent = document.getElementById("remained").textContent.slice(1);
     if(document.getElementById("remained").textContent.length === 0) {
@@ -96,7 +81,6 @@ function confirmText(){
 
 const targetconfirmText = document.getElementById("typedText");
 targetconfirmText.addEventListener("input", confirmText);
-
 
 function retry() {
   window.location.reload();
