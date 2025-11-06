@@ -1,0 +1,54 @@
+#chrissmassTree {
+  width: 300px;
+  height: 330px;
+  top: 20px;
+  margin: 0 auto;
+  position:relative;
+}
+
+#chrissmassTreeImg {
+  width: 250px;
+  height: 250px;
+  top: 50px;
+}
+
+#supportMessage {
+  font-size: 16pt;
+}
+
+#retryMessage {
+  font-size: 24pt;
+}
+
+#textArea {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  position:relative;
+}
+
+#typingArea {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  position:relative;
+}
+
+#currentWord {
+  font-size: 24pt;
+}
+
+#typedText {
+  font-size: 18pt;
+  text-align: center;
+}
+
+#typed {
+  color: gray;
+}
+
+#message {
+  width: 300px;
+  margin: 0 auto;
+  position:relative;
+}
