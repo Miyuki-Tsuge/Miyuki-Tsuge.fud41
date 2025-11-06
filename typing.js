@@ -28,16 +28,16 @@ const arrayOfSupportMessage = [
 ]
 
 const arrayOfImg = [
-  "images/christmasTree0.png",
-  "images/christmasTree0.png",
-  "images/christmasTree1.png",
-  "images/christmasTree1.png",
-  "images/christmasTree1.png",
-  "images/christmasTree2.png",
-  "images/christmasTree2.png",
-  "images/christmasTree2.png",
-  "images/christmasTree3.png",
-  "images/christmasTree3.png"
+  "christmasTree0.png",
+  "christmasTree0.png",
+  "christmasTree1.png",
+  "christmasTree1.png",
+  "christmasTree1.png",
+  "christmasTree2.png",
+  "christmasTree2.png",
+  "christmasTree2.png",
+  "christmasTree3.png",
+  "christmasTree3.png"
 ]
 
 let i = 0;
@@ -81,7 +81,7 @@ function confirmText(){
         document.getElementById("retry").style.visibility = "";
         if(i === 10) {
           document.getElementById("supportMessage").textContent = "Finish!" + "🎁".repeat(5);
-          document.getElementById("chrissmassTreeImg").src = "images/christmasTree4.png";
+          document.getElementById("chrissmassTreeImg").src = "christmasTree4.png";
         } else {
           document.getElementById("supportMessage").textContent = "";
           document.getElementById("retryMessage").style.visibility = "";
