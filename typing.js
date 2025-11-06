@@ -2,7 +2,7 @@
 // 1行目に記載している 'use strict' は削除しないでください
 
 const arrayOfWord = [
-  "christmas tree",
+  "ornaments",
   "present",
   "stocking",
   "carol",
