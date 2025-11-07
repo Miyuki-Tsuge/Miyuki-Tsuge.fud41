@@ -41,11 +41,11 @@ function setWord() {
   let word = arrayOfWord[key];
   arrayOfWord.splice(key, 1);
   
+  document.getElementById("supportMessage").textContent = "🎉".repeat(Math.floor(i / 2));
+  document.getElementById("chrissmassTreeImg").src=arrayOfImg[i];
   document.getElementById("typed").textContent = "";
   document.getElementById("remained").textContent = word;
   document.getElementById("typedText").value = "";
-  document.getElementById("supportMessage").textContent = "🎉".repeat(Math.floor(i / 2));
-  document.getElementById("chrissmassTreeImg").src=arrayOfImg[i];
   
   typedError = false;
 }
