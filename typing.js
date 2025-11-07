@@ -31,9 +31,14 @@ let i = 0;
 let typedError = false;
 
 function setWord() {
+  if(typedError === false) {
+    if(arrayOfWord.length !== 10){
+      i += 1;
+    }
+  }
+
   let key = Math.floor(Math.random() * arrayOfWord.length);
   let word = arrayOfWord[key];
-  
   arrayOfWord.splice(key, 1);
   
   document.getElementById("typed").textContent = "";
@@ -41,10 +46,6 @@ function setWord() {
   document.getElementById("typedText").value = "";
   document.getElementById("supportMessage").textContent = "🎉".repeat(Math.floor(i / 2));
   document.getElementById("chrissmassTreeImg").src=arrayOfImg[i];
-  
-  if(typedError === false) {
-    i += 1;
-  }
   
   typedError = false;
 }
@@ -65,8 +66,8 @@ function confirmText(){
         document.getElementById("typingArea").style.visibility = "hidden";
         document.getElementById("textArea").style.visibility = "hidden";
         document.getElementById("retry").style.visibility = "";
-        if(i === 10) {
-          document.getElementById("supportMessage").textContent = "Finish!" + "🎁".repeat(5);
+        if(i === 9) {
+          document.getElementById("supportMessage").textContent = "完成！🎁🎁🎁🎁🎁";
           document.getElementById("chrissmassTreeImg").src = "christmasTree4.png";
         } else {
           document.getElementById("supportMessage").textContent = "";
@@ -75,7 +76,9 @@ function confirmText(){
       }
     }
   } else {
-    typedError = true;
+    if(typedError === false) {
+      typedError = true;
+    }
   }
 }
 
