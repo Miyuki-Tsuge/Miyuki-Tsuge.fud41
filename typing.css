@@ -1,24 +1,21 @@
 #chrissmassTree {
-  width: 400px;
-  height: 400px;
-  top: 20px;
+  width: 500px;
+  height: 380px;
+  /* height: 400px; */
+  top: 10px;
   margin: 0 auto;
   position:relative;
 }
 
 #chrissmassTreeImg {
-  width: 250px;
+  width: 500px;
   height: 300px;
   top: 30px;
   object-fit: contain;
 }
 
-#supportMessage {
-  font-size: 24pt;
-}
-
-#retryMessage {
-  font-size: 24pt;
+#supportMessage, #clickToStartOrRetry, #retryMessage {
+  font-size: 20pt;
 }
 
 #textArea {
