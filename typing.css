@@ -1,6 +1,6 @@
 #chrissmassTree {
-  width: 300px;
-  height: 330px;
+  width: 400px;
+  height: 400px;
   top: 20px;
   margin: 0 auto;
   position:relative;
@@ -8,12 +8,13 @@
 
 #chrissmassTreeImg {
   width: 250px;
-  height: 250px;
-  top: 50px;
+  height: 300px;
+  top: 30px;
+  object-fit: contain;
 }
 
 #supportMessage {
-  font-size: 16pt;
+  font-size: 24pt;
 }
 
 #retryMessage {
@@ -34,7 +35,7 @@
   position:relative;
 }
 
-#currentWord {
+#word {
   font-size: 24pt;
 }
 
