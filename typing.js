@@ -31,12 +31,12 @@ let i = 0;
 let typedError = false;
 
 function setWord() {
-  if(typedError === false) {
-    if(arrayOfWord.length !== 10){
+  if (typedError === false) {
+    if (arrayOfWord.length !== 10){
       i += 1;
     }
   }
-
+  
   let key = Math.floor(Math.random() * arrayOfWord.length);
   let word = arrayOfWord[key];
   arrayOfWord.splice(key, 1);
@@ -50,7 +50,23 @@ function setWord() {
   typedError = false;
 }
 
-setWord();
+function clickButton() {
+  if (document.getElementById("clickToStartOrRetry").textContent === "スタート！") {
+    document.getElementById("clickToStartOrRetry").style.visibility = "hidden";
+    document.getElementById("clickToStartOrRetry").textContent = "リトライ！";
+    document.getElementById("typingArea").style.visibility = "";
+    document.getElementById("textArea").style.visibility = "";
+    document.getElementById("typedText").focus();
+    setWord();
+  } else if (document.getElementById("clickToStartOrRetry").textContent === "リトライ！"){
+    window.location.reload();
+    document.getElementById("clickToStartOrRetry").textContent = "スタート！";
+  }
+}
+
+const targetClickButton = document.getElementById("clickToStartOrRetry");
+targetClickButton.addEventListener("click", clickButton);
+
 
 function confirmText(){
   let typedStr = document.getElementById("typedText").value;
@@ -59,14 +75,14 @@ function confirmText(){
   if (compareFirstWord === typedLastWord) {
     document.getElementById("typed").textContent += typedLastWord;
     document.getElementById("remained").textContent = document.getElementById("remained").textContent.slice(1);
-    if(document.getElementById("remained").textContent.length === 0) {
-      if(arrayOfWord.length > 0) {
+    if (document.getElementById("remained").textContent.length === 0) {
+      if (arrayOfWord.length > 0) {
         setWord();
       } else {
         document.getElementById("typingArea").style.visibility = "hidden";
         document.getElementById("textArea").style.visibility = "hidden";
-        document.getElementById("retry").style.visibility = "";
-        if(i === 9) {
+        document.getElementById("clickToStartOrRetry").style.visibility = "";
+        if (i === 9) {
           document.getElementById("supportMessage").textContent = "完成！🎁🎁🎁🎁🎁";
           document.getElementById("chrissmassTreeImg").src = "christmasTree4.png";
         } else {
@@ -76,7 +92,7 @@ function confirmText(){
       }
     }
   } else {
-    if(typedError === false) {
+    if (typedError === false) {
       typedError = true;
     }
   }
@@ -84,10 +100,3 @@ function confirmText(){
 
 const targetconfirmText = document.getElementById("typedText");
 targetconfirmText.addEventListener("input", confirmText);
-
-function retry() {
-  window.location.reload();
-}
-
-const targetRetry = document.getElementById("retry");
-targetRetry.addEventListener("click", retry);
